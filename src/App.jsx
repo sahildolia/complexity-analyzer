@@ -56,6 +56,14 @@ function App() {
       setResult({ time: "N/A", space: "N/A", error: err.message });
     }
   };
+  const reset = () => {
+    
+    try {
+      setCode("");
+    } catch (err) {
+      setCode({ time: "N/A", space: "N/A", error: err.message });
+    }
+  };
 
   return (
     <div style={{ padding: 20 }}>
@@ -69,6 +77,7 @@ function App() {
       />
       <br /><br />
       <button onClick={() => analyze(code)}>Analyze</button>
+      <button onClick={() => reset(code)}>Reset</button>
 
       {result && (
         <div style={{ marginTop: 20 }}>
